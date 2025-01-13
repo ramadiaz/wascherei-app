@@ -1,8 +1,11 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { SplashBackground } from '../../assets/images'
+import { useNavigation } from '@react-navigation/native'
 
 const SplashScreen = () => {
+    const navigation = useNavigation()
+
     return (
         <ImageBackground source={SplashBackground} resizeMode="cover" style={styles.backgroundImage}>
             <View style={styles.parent}>
@@ -11,8 +14,8 @@ const SplashScreen = () => {
                     <Text style={styles.subtitle}>Your laundry management digital app.</Text>
                 </View>
                 <View>
-                    <TouchableOpacity onPress={() => alert("hai")} style={styles.button}>
-                        <Text style={styles.buttonText}>Start</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+                        <Text style={styles.buttonText}>Get Started</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -45,10 +48,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     button: {
-        width: 120,
-        borderRadius: 20,
+        width: 150,
+        borderRadius: 999,
         backgroundColor: '#404040',
-        padding: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 25,
         marginLeft: 'auto',
         marginRight: 'auto'
     },
