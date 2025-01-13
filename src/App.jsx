@@ -1,12 +1,14 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { SplashScreen } from './pages';
 import 'react-native-gesture-handler'
 import Router from './router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Router />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }

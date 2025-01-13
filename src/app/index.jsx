@@ -1,4 +1,4 @@
-import Home from "./Home"
+import Home from "./(authorized)/Home"
 import SplashScreen from "./SplashScreen"
 
 export {
